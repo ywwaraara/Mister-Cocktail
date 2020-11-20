@@ -1,0 +1,24 @@
+<!-- <p>
+  <%#= @cocktail.name %>
+</p> -->
+
+
+<div class="banner" style="background color: white">
+  <div class="container">
+    <h1><%= @cocktail.name %></h1>
+  </div>
+</div>
+
+<div>
+   <% @cocktail.doses.each do |dose| %>
+      <tr>
+        <td><%= dose.description %></td>
+        <td><%= dose.ingredient.name %></td>
+      <%= link_to 'Remove', dose_path(dose), method: :delete %>
+      </tr>
+  <% end %>
+</div>
+
+<%= link_to 'Add doses', new_cocktail_dose_path(@cocktail) %>
+<%= link_to 'Back to main page ', cocktails_path %>
+

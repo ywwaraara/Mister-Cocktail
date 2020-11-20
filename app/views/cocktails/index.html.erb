@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+
+
+
+ <div class="container">
+  <!-- bannder -->
+  <div class="banner">
+    <h1>Cocktails</h1>
+    <p>Order. Drink. Drunk. Cheers.</p>
+  </div>
+  <% @cocktails.each do |cocktail| %>
+    <div class="card-trip">
+      <img src="https://images.unsplash.com/photo-1596097092650-730ba9475ad5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60">
+      <div class="card-trip-infos">
+        <h2> <%= link_to cocktail.name, cocktail %></h2>
+        <p><%= link_to 'Edit', edit_cocktail_path(cocktail)%></p>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+
+
+
+<%= link_to 'New Cocktail', new_cocktail_path %>
+
+
+
